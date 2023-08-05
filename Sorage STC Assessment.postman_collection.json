@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "09f2eb8c-fb9b-4327-a879-691ecec67bfe",
+		"name": "Sorage STC Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "15520495"
+	},
+	"item": [
+		{
+			"name": "Upload File",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "mail",
+						"value": "ali@gmail.com",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/ahmed/OneDrive/Desktop/Ahmed Asem - CV.pdf"
+						},
+						{
+							"key": "parentName",
+							"value": "backend",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8080/api/file/upload"
+			},
+			"response": []
+		},
+		{
+			"name": "Download file",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "mail",
+						"value": "ali@gmail.com",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "http://localhost:8080/api/file/download/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Get file metaData",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "mail",
+						"value": "asem@gmail.com",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "http://localhost:8080/api/file/meta/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Space",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"spaceName\": \"stc-assessments\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/create/space"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Folder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "mail",
+						"value": "ahmed@gmail.com",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"folderName\": \"backend\",\r\n    \"parentName\": \"stc-assessments\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/folder"
+			},
+			"response": []
+		}
+	]
+}
